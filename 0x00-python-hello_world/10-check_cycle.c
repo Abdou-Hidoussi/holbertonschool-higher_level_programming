@@ -19,5 +19,7 @@ int check_cycle(listint_t *list)
 	}
 	if ((*tmp).next == list)
 		return (1);
+	if ((*tmp).next == NULL)
+		return (0);
 	return (check_cycle((*list).next));
 }
