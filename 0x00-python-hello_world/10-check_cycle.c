@@ -14,11 +14,9 @@ int check_cycle(listint_t *list)
 
 	while ((*tmp).next != NULL && (*tmp).next != list)
 	{
+		if ((*tmp).next == list)
+			return (1);
 		tmp = (*tmp).next;
-	}
-	if ((*tmp).next == list)
-	{
-		return (1);
 	}
 	return (0);
 }
