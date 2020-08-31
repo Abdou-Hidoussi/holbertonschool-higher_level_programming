@@ -11,7 +11,7 @@ int check_cycle(listint_t *list)
 	listint_t *tmp;
 
 	tmp = list;
-	if (list == NULL)
+	if (list == NULL || (*list).next == NULL)
 		return (0);
 	while ((*tmp).next != NULL && (*tmp).next != list)
 	{
