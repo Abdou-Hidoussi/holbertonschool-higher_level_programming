@@ -22,7 +22,7 @@ int is_palindrome(listint_t **head)
 	}
 	while ((*a).n == (*b).n)
 	{
-		if ((*a).next == b)
+		if ((*a).next == b || (*a).next == (*b).next)
 		{
 			return (1);
 		}
