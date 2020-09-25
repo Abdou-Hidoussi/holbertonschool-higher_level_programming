@@ -1,0 +1,68 @@
+>>> test = __import__("2-matrix_divided").matrix_divided
+
+>>> test([[1, 2, 3], [4, 5, 6]], 3)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+
+>>> try:
+...     test([[1, 2, 3], [4, 5, 6]], 0)
+... except Exception as e:
+...     print(e)
+...
+division by zero
+
+
+>>> try:
+...     test([[1, 2, 3], [4, 5, 6]], 0)
+... except Exception as e:
+...     print(e)
+...
+division by zero
+
+
+>>> try:
+...     test(None, 2)
+... except Exception as e:
+...     print(e)
+...
+matrix must be a matrix (list of lists) of integers/floats
+
+
+>>> try:
+...     test([[]], 2)
+... except Exception as e:
+...     print(e)
+...
+matrix must be a matrix (list of lists) of integers/floats
+
+
+>>> try:
+...     test("testing", 2)
+... except Exception as e:
+...     print(e)
+...
+matrix must be a matrix (list of lists) of integers/floats
+
+
+>>> try:
+...     test([5, 1, 4], 2)
+... except Exception as e:
+...     print(e)
+...
+matrix must be a matrix (list of lists) of integers/floats
+
+
+>>> try:
+...     test([["test", "testing"],["still testing","same"]], 2)
+... except Exception as e:
+...     print(e)
+...
+matrix must be a matrix (list of lists) of integers/floats
+
+
+>>> try:
+...     test([[5],[5,5]], 2)
+... except Exception as e:
+...     print(e)
+...
+Each row of the matrix must have the same size
