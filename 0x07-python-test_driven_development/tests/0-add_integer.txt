@@ -1,0 +1,47 @@
+>>> test = __import__("0-add_integer").add_integer
+>>> test(8,5)
+13
+
+
+>>> test(8.2,5.8)
+13
+
+
+>>> test(8,5.8)
+13
+
+
+>>> test(8.2,5)
+13
+
+
+>>> try:
+...     test("tis but a test", 8)
+... except Exception as e:
+...     print(e)
+...
+a must be an integer
+
+
+>>> try:
+...     test(8, "tis bust a test")
+... except Exception as e:
+...     print(e)
+...
+b must be an integer
+
+
+>>> try:
+...     test(2, [2,600])
+... except Exception as e:
+...     print(e)
+...
+b must be an integer
+
+
+>>> try:
+...     test([55,100], 1)
+... except Exception as e:
+...     print(e)
+...
+a must be an integer
