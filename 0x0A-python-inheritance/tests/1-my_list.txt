@@ -45,7 +45,5 @@ TypeError: append() takes exactly one argument (0 given)
 
 
 >>> test = Test_Class()
->>> test.append(1)
->>> test[0] = (2)
->>> print(test)
-[2]
+>>> type(test)
+<class '1-my_list.MyList'>
