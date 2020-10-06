@@ -1,0 +1,20 @@
+>>> Test_Class = __import__('1-my_list').MyList
+>>> test = Test_Class()
+>>> test.print_sorted()
+[]
+>>> test.append(1)
+>>> test.append(4)
+>>> test.append(2)
+>>> test.append(3)
+>>> test.append(5)
+>>> test.print_sorted()
+[1, 2, 3, 4, 5]
+>>> test.append(8)
+>>> test.print_sorted()
+[1, 2, 3, 4, 5, 8]
+>>> test.append(-8)
+>>> test.print_sorted()
+[-8, 1, 2, 3, 4, 5, 8]
+>>> test.append(3)
+>>> test.print_sorted()
+[-8, 1, 2, 3, 3, 4, 5, 8]
