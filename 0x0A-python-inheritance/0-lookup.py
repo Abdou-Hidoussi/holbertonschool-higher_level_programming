@@ -2,6 +2,8 @@
 """
 Task 1
 """
+
+
 def lookup(obj):
     """
     obj: Object
