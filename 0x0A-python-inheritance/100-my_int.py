@@ -2,6 +2,8 @@
 """
 task 12
 """
+
+
 class MyInt(int):
     """ My inherit class """
     def __init__(self, value):
