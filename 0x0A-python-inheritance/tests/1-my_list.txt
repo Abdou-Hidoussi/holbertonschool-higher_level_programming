@@ -2,6 +2,8 @@
 >>> test = Test_Class()
 >>> test.print_sorted()
 []
+
+
 >>> test.append(1)
 >>> test.append(4)
 >>> test.append(2)
@@ -9,12 +11,29 @@
 >>> test.append(5)
 >>> test.print_sorted()
 [1, 2, 3, 4, 5]
+
+
 >>> test.append(8)
 >>> test.print_sorted()
 [1, 2, 3, 4, 5, 8]
+
+
 >>> test.append(-8)
 >>> test.print_sorted()
 [-8, 1, 2, 3, 4, 5, 8]
+
+
 >>> test.append(3)
 >>> test.print_sorted()
 [-8, 1, 2, 3, 3, 4, 5, 8]
+
+
+>>> test = Test_Class([1, 2], [3, 4])
+Traceback (most recent call last):
+TypeError: list() takes at most 1 argument (2 given)
+
+
+>>> test = Test_Class()
+>>> test.append("Milo")
+>>> print(test)
+['Milo']
