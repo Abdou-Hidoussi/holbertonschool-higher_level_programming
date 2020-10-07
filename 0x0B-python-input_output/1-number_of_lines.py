@@ -4,7 +4,7 @@ task 1
 """
 
 
-def read_file(filename=""):
+def number_of_lines(filename=""):
     """count line function"""
     x = 0
     with open(filename, encoding="UTF-8") as f:
