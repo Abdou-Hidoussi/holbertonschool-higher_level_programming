@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 from models.base import Base
-
 """ RECTANGLE """
+
 
 class Rectangle(Base):
     """ classs RECTANGLE
@@ -78,7 +78,8 @@ class Rectangle(Base):
                 print("")
 
     def __str__(self):
-        return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height))
+        return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
+                self.__x, self.__y, self.__width, self.__height))
 
     def update(self, *args, **kwargs):
         if not args:
@@ -86,12 +87,12 @@ class Rectangle(Base):
                 setattr(self, key, value)
         else:
             if len(args) > 0:
-                setattr(self ,"id" ,args[0])
+                setattr(self, "id", args[0])
             if len(args) > 1:
-                setattr(self ,"width" ,args[1])
+                setattr(self, "width", args[1])
             if len(args) > 2:
-                setattr(self ,"height" ,args[2])
+                setattr(self, "height", args[2])
             if len(args) > 3:
-                setattr(self ,"x" ,args[3])
+                setattr(self, "x", args[3])
             if len(args) > 4:
-                setattr(self ,"y" ,args[4])
+                setattr(self, "y", args[4])
