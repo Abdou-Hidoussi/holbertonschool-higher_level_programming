@@ -97,10 +97,7 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """ update """
-        if not args:
-            for key, value in kwargs.items():
-                setattr(self, key, value)
-        else:
+        if args:
             if len(args) > 0:
                 setattr(self, "id", args[0])
             if len(args) > 1:
@@ -111,3 +108,6 @@ class Rectangle(Base):
                 setattr(self, "x", args[3])
             if len(args) > 4:
                 setattr(self, "y", args[4])
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
