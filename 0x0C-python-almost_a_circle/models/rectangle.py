@@ -7,8 +7,6 @@ class Rectangle(Base):
     """ classs RECTANGLE
     """
     def __init__(self, width, height, x=0, y=0, id=None):
-    """ __init__ function
-    """
         super().__init__(id)
         self.__width = width
         self.__height = height
@@ -17,14 +15,10 @@ class Rectangle(Base):
 
     @property
     def width(self):
-    """ width function
-    """
         return self.__width
 
     @width.setter
     def width(self, value):
-    """ width function
-    """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -33,14 +27,10 @@ class Rectangle(Base):
 
     @property
     def height(self):
-    """ height function
-    """
         return self.__hight
 
     @height.setter
     def height(self, value):
-    """ height function
-    """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value <= 0:
@@ -49,14 +39,10 @@ class Rectangle(Base):
 
     @property
     def x(self):
-    """ x function
-    """
         return self.__x
 
     @x.setter
     def x(self, value):
-    """ x function
-    """
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
         if value < 0:
@@ -65,14 +51,10 @@ class Rectangle(Base):
 
     @property
     def y(self):
-    """ y function
-    """
         return self.__y
 
     @y.setter
     def y(self, value):
-    """ y function
-    """
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
         if value < 0:
@@ -80,13 +62,9 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
-    """ area function
-    """
         return (self.__height * self.__width)
 
     def display(self):
-    """ display function
-    """
         if self.__height == 0 or self.__width == 0:
             print("")
         else:
@@ -100,14 +78,10 @@ class Rectangle(Base):
                 print("")
 
     def __str__(self):
-    """ __str__ function
-    """
         return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
                 self.__x, self.__y, self.__width, self.__height))
 
     def update(self, *args, **kwargs):
-    """ update function
-    """
         if not args:
             for key, value in kwargs.items():
                 setattr(self, key, value)
