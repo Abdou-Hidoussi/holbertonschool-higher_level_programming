@@ -47,17 +47,14 @@ class Base:
         return dummy
 
     @classmethod
-    def load_from_file_csv(cls):
+    def load_from_file(cls):
+        name = cls.__name__ + ".json"
+        data = []
         try:
-            with open(cls.__name__ + '.csv', 'r', encoding='utf-8') as f:
-                l = []
-                dic = f.read()
-                if dic:
-                    file_data = cls.from_json_string(file_dict)
-                    for new in file_data:
-                        instance = cls.create(**new)
-                        l.append(instance)
-                    return l
-                return []
-        except Exception:
-            return []
+            with open(filename) as file:
+                data = cls.from_json_string(file.read())
+            for i, j in enumerate(data):
+                data[i] = cls.create(**data[i])
+        except:
+            pass
+        return data
