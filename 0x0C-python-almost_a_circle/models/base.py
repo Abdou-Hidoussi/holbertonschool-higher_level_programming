@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ base """
-from json import dumps
+from json import dumps, loads
 
 
 class Base:
@@ -19,8 +19,14 @@ class Base:
     def to_json_string(list_dictionaries):
         if list_dictionaries:
             return dumps(list_dictionaries)
-        else:
-            return dumps([])
+        return dumps([])
+
+
+    @staticmethod
+    def from_json_string(json_string):
+        if json_string:
+            return loads(json_string)
+        return []
 
     @classmethod
     def save_to_file(cls, list_objs):
