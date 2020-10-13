@@ -9,7 +9,7 @@ class Square(Rectangle):
     """Square class inheriting from Rectangle class"""
     def __init__(self, size, x=0, y=0, id=None):
         super().__init__(size, size, x, y, id)
-        self.size = size
+        self.__size = size
 
     @property
     def size(self):
@@ -36,3 +36,9 @@ class Square(Rectangle):
         elif kwargs:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        """ to_dictionary """
+        dic = {'id': self.id, 'x': self.__x, 'y': self.__y,
+                'size': self.__size}
+        return dic
