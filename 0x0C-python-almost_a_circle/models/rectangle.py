@@ -15,10 +15,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """width getter"""
         return self.__width
 
     @width.setter
     def width(self, value):
+        """width setter"""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -27,10 +29,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """height getter"""
         return self.__hight
 
     @height.setter
     def height(self, value):
+        """height setter"""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value <= 0:
@@ -39,10 +43,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """x getter"""
         return self.__x
 
     @x.setter
     def x(self, value):
+        """x setter"""
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
         if value < 0:
@@ -51,10 +57,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """y getter"""
         return self.__y
 
     @y.setter
     def y(self, value):
+        """y setter"""
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
         if value < 0:
@@ -62,9 +70,11 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
+        """ area """
         return (self.__height * self.__width)
 
     def display(self):
+        """ display """
         if self.__height == 0 or self.__width == 0:
             print("")
         else:
@@ -78,10 +88,12 @@ class Rectangle(Base):
                 print("")
 
     def __str__(self):
+        """ __str__ """
         return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
                 self.__x, self.__y, self.__width, self.__height))
 
     def update(self, *args, **kwargs):
+        """ update """
         if not args:
             for key, value in kwargs.items():
                 setattr(self, key, value)
