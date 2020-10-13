@@ -21,7 +21,6 @@ class Base:
             return dumps(list_dictionaries)
         return dumps([])
 
-
     @staticmethod
     def from_json_string(json_string):
         if json_string:
@@ -36,3 +35,12 @@ class Base:
             ls = [data.to_dictionary() for data in list_objs]
         with open(name, 'w', encoding='utf-8') as my_file:
             my_file.write(Base.to_json_string(ls))
+
+    @classmethod
+    def create(cls, **dictionary):
+        if cls.__name__ is "Rectangle":
+            dummy = cls(10, 10)
+        elif cls.__name__ is "Square":
+            dummy = cls(10)
+        dummy.update(**dictionary)
+        return dummy
