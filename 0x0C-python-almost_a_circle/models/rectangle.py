@@ -101,6 +101,6 @@ class Rectangle(Base):
         if args:
             for key, value in zip(keys, args):
                 setattr(self, key, value)
-        elif kwargs:
+        elif kwargs is not None:
             for key, value in kwargs.items():
                 setattr(self, key, value)
