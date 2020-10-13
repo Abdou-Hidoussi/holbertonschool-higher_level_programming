@@ -96,11 +96,12 @@ class Rectangle(Base):
                 self.__x, self.__y, self.__width, self.__height))
 
     def update(self, *args, **kwargs):
-        """ update """
-        keys = ['id', 'width', 'height', 'x', 'y']
+        """ update function """
+        attributes = ['id', 'width', 'height', 'x', 'y']
         if args:
-            for key, value in zip(keys, args):
-                setattr(self, key, value)
-        elif kwargs is not None:
+            for att, arg in zip(attributes, args):
+                setattr(self, att, arg)
+        elif kwargs:
             for key, value in kwargs.items():
-                setattr(self, key, value)
+                if key in attributes:
+                    setattr(self, key, value)
