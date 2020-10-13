@@ -99,8 +99,8 @@ class Rectangle(Base):
         """ update """
         keys = ['id', 'width', 'height', 'x', 'y']
         if args:
-            for att, arg in zip(keys, args):
-                setattr(self, att, arg)
+            for key, value in zip(keys, args):
+                setattr(self, key, value)
         elif kwargs:
             for key, value in kwargs.items():
                 setattr(self, key, value)
