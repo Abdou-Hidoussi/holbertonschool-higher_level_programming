@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ base """
 from json import dumps, loads
+import csv
 
 
 class Base:
@@ -44,3 +45,19 @@ class Base:
             dummy = cls(10)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file_csv(cls):
+        try:
+            with open(cls.__name__ + '.csv', 'r', encoding='utf-8') as f:
+                l = []
+                dic = f.read()
+                if dic:
+                    file_data = cls.from_json_string(file_dict)
+                    for new in file_data:
+                        instance = cls.create(**new)
+                        l.append(instance)
+                    return l
+                return []
+        except Exception:
+            return []
