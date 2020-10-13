@@ -6,24 +6,22 @@ from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """ classs Square
-    """
+    """Square class inheriting from Rectangle class"""
     def __init__(self, size, x=0, y=0, id=None):
         super().__init__(size, size, x, y, id)
-        self.size = size
-
-    def __str__(self):
-        return ("[Square] ({}) {}/{} - {}".format(self.id, self._Rectangle__x,
-                self._Rectangle__y, self.__size))
 
     @property
     def size(self):
-        """ size getter """
-        return self.__size
+        """ size getter"""
+        return self.width
 
     @size.setter
     def size(self, value):
         """ size setter """
         self.width = value
         self.height = value
-        self.__size = value
+
+    def __str__(self):
+        """ __str__ """
+        return"[Square] ({:d}) {:d}/{:d} - {:d}".format(
+            self.id, self.x, self.y, self.width)
