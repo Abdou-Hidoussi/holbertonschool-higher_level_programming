@@ -1,0 +1,2 @@
+-- holberton
+SHOW TABLES;
