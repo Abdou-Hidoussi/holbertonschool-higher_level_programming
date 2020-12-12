@@ -11,7 +11,7 @@ def Task3():
                          passwd=argv[2],
                          db=argv[3])
     point = db.cursor()
-    point.execute("SELECT * from states WHERE name LIKE '{}'\
+    point.execute("SELECT * from states WHERE name LIKE %s\
             COLLATE latin1_general_cs\
             ORDER BY states.id", (argv[4]))
     for state in point.fetchall():
