@@ -3,6 +3,7 @@
 import MySQLdb
 import sys
 
+
 def Task0():
     db = MySQLdb.connect(host="localhost",
                          port=3306,
@@ -10,7 +11,7 @@ def Task0():
                          passwd=argv[2],
                          db=argv[3])
     point = db.cursor()
-    point.execute("SELECT * from states ORDER BY id ASC")
+    point.execute("SELECT * from states ORDER BY states.id ASC")
     for state in point.fetchall():
         print(state)
     point.close()
