@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Task 0 """
+""" Task 1 """
 import MySQLdb
 from sys import argv
 
