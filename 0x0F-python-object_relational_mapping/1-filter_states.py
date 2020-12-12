@@ -12,7 +12,7 @@ def Task1():
                          db=argv[3])
     point = db.cursor()
     point.execute("SELECT * FROM states WHERE name LIKE\
-        'N%' ORDER BY states.id")
+        BINARY 'N%' ORDER BY states.id")
     for state in point.fetchall():
         print(state)
     point.close()
