@@ -12,7 +12,7 @@ def Task3():
                          db=argv[3])
     point = db.cursor()
     point.execute("SELECT * from states WHERE name LIKE %s\
-            ORDER BY states.id", (argv[4]))
+            ORDER BY states.id", (argv[4], ))
     for state in point.fetchall():
         print(state)
     point.close()
