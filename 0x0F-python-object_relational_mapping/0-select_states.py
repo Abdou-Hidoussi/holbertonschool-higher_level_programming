@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ Task 0 """
 import MySQLdb
-import sys
+from sys import argv
 
 
 def Task0():
@@ -11,7 +11,7 @@ def Task0():
                          passwd=argv[2],
                          db=argv[3])
     point = db.cursor()
-    point.execute("SELECT * from states ORDER BY states.id ASC")
+    point.execute("SELECT * from states ORDER BY states.id")
     for state in point.fetchall():
         print(state)
     point.close()
