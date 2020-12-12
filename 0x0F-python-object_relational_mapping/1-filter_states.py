@@ -11,10 +11,7 @@ def Task1():
                          passwd=argv[2],
                          db=argv[3])
     point = db.cursor()
-    point.execute("SELECT *\
-                FROM states\
-                WHERE name LIKE BINARY 'N%'\
-                ORDER BY id ASC")
+    point.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id")
     for state in point.fetchall():
         print(state)
     point.close()
