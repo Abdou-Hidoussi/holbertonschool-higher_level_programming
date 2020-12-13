@@ -19,13 +19,9 @@ def Task5():
                 ORDER BY cities.id ASC", (argv[4], ))
     ls = []
     for cities in point.fetchall():
-        if cities not in ls:
-            ls.append(cities)
-    print(ls[0][0], end="")
-    ls.remove(ls[0])
-    for x in ls:
-        print(", ", x[0], end="")
-    print("")
+        for name in cities:
+            ls.append(name)
+    print(', '.join(ls))
     point.close()
     db.close()
 
