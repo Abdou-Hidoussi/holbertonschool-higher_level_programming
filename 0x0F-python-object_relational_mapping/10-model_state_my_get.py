@@ -13,12 +13,11 @@ def Task10():
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    for instance in session.query(State).order_by(asc(State.id)):
-        if argv[4] in instance.name:
-            print(str(instance.id))
-            session.close()
-            return
-    print("Not found")
+    instance = session.query(State).filter(State.name == argv[4]).first()
+    if instance is not None:
+        print(str(instance.id))
+    else:
+        print("Not found")
     session.close()
 
 if __name__ == "__main__":
