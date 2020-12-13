@@ -11,3 +11,4 @@ class State(Base):
     __tablename__ = 'states'
     id = Column("id", Integer, primary_key=True, nullable=False)
     name = Column("name", String(50), primary_key=False, nullable=False)
+
