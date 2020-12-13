@@ -14,7 +14,7 @@ def Task8():
     Session = sessionmaker(bind=engine)
     session = Session()
     instance = session.query(State).order_by(asc(State.id)).first()
-    if instance is None:
+    if instance is not None:
         print(str(instance.id) + ': ' + instance.name)
     else:
         print("Nothing")
