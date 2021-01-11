@@ -5,5 +5,5 @@ import requests
 
 
 if __name__ == '__main__':
-    html = requests.get(argv[1]).headers["X-Request-Id"]
+    html = requests.get(argv[1]).headers.get('X-Request-Id')
     print(html)
