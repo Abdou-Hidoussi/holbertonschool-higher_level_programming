@@ -1,6 +1,5 @@
 #!/usr/bin/node
-len = process.argv.length;
-if(len == 2)
+if(process.argv[2] == undefined)
 {
     console.log("No argument");
 }
