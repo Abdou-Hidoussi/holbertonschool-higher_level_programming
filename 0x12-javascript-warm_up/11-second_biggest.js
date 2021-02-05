@@ -11,5 +11,5 @@ else
   {
     return a - b;
   });
-  console.log(process.argv);
+  console.log(process.argv.reverse()[1]);
 }
