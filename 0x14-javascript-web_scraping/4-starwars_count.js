@@ -8,9 +8,11 @@ request(process.argv[2], function (error, url, body) {
     let count = 0;
     for (const film of list) {
         for (let ch of film.characters) {
-            if (ch.search('/18/') > 0) { count++; }
-          }
+            if (ch.search('/18/') > 0) {
+                count++;
+            }
         }
+    }
     console.log(count);
   }
 });
