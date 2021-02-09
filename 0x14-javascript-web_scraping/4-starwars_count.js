@@ -7,10 +7,10 @@ request(process.argv[2], function (error, url, body) {
     const list = JSON.parse(body).results;
     let count = 0;
     for (const film of list) {
-      if (film.characters.includes('https://swapi-api.hbtn.io/api/people/18/')) {
-        count++;
-      }
-    }
+        for (let ch of film.characters) {
+            if (ch.search('/18/') > 0) { count++; }
+          }
+        }
     console.log(count);
   }
 });
