@@ -9,5 +9,6 @@ request(process.argv[2], function (error, url, body) {
         if (error) {
           console.log(error);
         }
-  })
+  });
 }
+});
