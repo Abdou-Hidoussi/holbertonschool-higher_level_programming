@@ -2,7 +2,7 @@
 const Mraba3 = require('./5-square');
 class Square extends Mraba3 {
   charPrint (ch) {
-    if (ch == undefined) {
+    if (ch === undefined) {
       ch = 'X';
     }
     for (let i = 0; i < this.height; i++) {
