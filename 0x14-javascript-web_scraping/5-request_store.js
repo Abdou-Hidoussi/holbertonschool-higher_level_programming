@@ -6,9 +6,9 @@ request(process.argv[2], function (error, url, body) {
     console.log(error);
   } else {
     fs.writeFile(process.argv[3], body, 'utf-8', (error) => {
-        if (error) {
-          console.log(error);
-        }
-  });
-}
+      if (error) {
+        console.log(error);
+      }
+    });
+  }
 });
