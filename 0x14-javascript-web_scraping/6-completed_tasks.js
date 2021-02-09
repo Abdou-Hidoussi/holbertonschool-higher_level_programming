@@ -8,7 +8,7 @@ request(process.argv[2], function (error, url, body) {
     let count = {};
     for (const task of list) {
       if (task.completed === true) {
-        if (task.userId in completed) { count[task.userId]++; }
+        if (task.userId in count) { count[task.userId]++; } else { count[task.userId] = 1; } 
       }
     }
     console.log(count);
